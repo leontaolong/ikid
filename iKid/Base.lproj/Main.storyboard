@@ -63,7 +63,7 @@
         <!--Pun-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="iKid" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="punView" id="8rJ-Kc-sve" customClass="SecondViewController" customModule="iKid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,6 +72,7 @@
                                 <rect key="frame" x="316" y="550" width="32" height="30"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
+                                    <action selector="switchViews:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="GRr-Vy-MkU"/>
                                     <action selector="switchViews:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Ii5-7Z-MhT"/>
                                 </connections>
                             </button>
@@ -101,6 +102,10 @@
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Pun" image="first" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="btnFlip" destination="eZK-iJ-GqB" id="mX5-39-tXl"/>
+                        <outlet property="lbJoke" destination="pfM-un-cMm" id="vbU-zL-0AE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -109,7 +114,7 @@
         <!--Dad-->
         <scene sceneID="kiZ-KD-Egg">
             <objects>
-                <viewController id="iLN-IZ-Mcg" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="dadView" id="iLN-IZ-Mcg" customClass="ThirdViewController" customModule="iKid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g6R-FV-4y4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -131,6 +136,7 @@
                                 <state key="normal" title="Next"/>
                                 <connections>
                                     <action selector="switchViews:" destination="9pv-A4-QxB" eventType="touchUpInside" id="eob-eC-KMf"/>
+                                    <action selector="switchViews:" destination="iLN-IZ-Mcg" eventType="touchUpInside" id="ndU-bN-gAe"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -148,6 +154,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Dad" image="first" id="SQN-DD-qO7"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="btnFlip" destination="1HF-Wa-DYT" id="eQs-nR-MLF"/>
+                        <outlet property="lbJoke" destination="A2g-Tc-C02" id="Yg3-II-WAd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZLV-vo-PaZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
