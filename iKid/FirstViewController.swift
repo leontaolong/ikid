@@ -34,14 +34,14 @@ class FirstViewController: UIViewController {
         if (head) {
             UIView.setAnimationTransition(.flipFromLeft, for: view, cache: true)
             firstView.view.frame = view.frame
-            lbJoke.text = "Yoda: Off course, we are."
+            lbJoke.text = "Back"
             btnFlip.setTitle("Back", for: UIControlState.normal)
             UIView.commitAnimations()
             head = false
         } else {
             UIView.setAnimationTransition(.flipFromRight, for: view, cache: true)
             firstView.view.frame = view.frame
-            lbJoke.text = "Luke Skywalker: Yoda, are we going in the right direction?"
+            lbJoke.text = "Front"
             btnFlip.setTitle("Next", for: UIControlState.normal)
             UIView.commitAnimations()
             head = true
