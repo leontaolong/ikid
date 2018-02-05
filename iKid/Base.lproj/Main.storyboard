@@ -13,39 +13,52 @@
         <!--Good-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="iKid" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="goodView" id="9pv-A4-QxB" customClass="FirstViewController" customModule="iKid" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="First View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
-                                <rect key="frame" x="112.5" y="312" width="150.5" height="43"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTb-ue-E2Q">
+                                <rect key="frame" x="148" y="97" width="79" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by FirstViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L">
-                                <rect key="frame" x="90.5" y="363" width="194.5" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OuT-VU-RCS">
+                                <rect key="frame" x="316" y="550" width="32" height="30"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="switchViews:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Tfn-bM-opo"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Luke Skywalker: Yoda, are we going in the right direction?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mtH-1A-9rS">
+                                <rect key="frame" x="85" y="283" width="205" height="72"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="8" symbolic="YES" id="cfb-er-3JN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="e1l-AV-tCB"/>
-                            <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="OuT-VU-RCS" secondAttribute="bottom" constant="38" id="4SL-SD-xWW"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="mtH-1A-9rS" secondAttribute="trailing" constant="85" id="DS1-hw-q7O"/>
+                            <constraint firstItem="mtH-1A-9rS" firstAttribute="centerY" secondItem="PQr-Ze-W5v" secondAttribute="centerY" id="T7W-pP-utV"/>
+                            <constraint firstItem="mtH-1A-9rS" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="85" id="WLm-jY-Fuc"/>
+                            <constraint firstItem="jTb-ue-E2Q" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="77" id="fsk-lL-G2r"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="OuT-VU-RCS" secondAttribute="trailing" constant="27" id="lQy-6C-GAP"/>
+                            <constraint firstItem="jTb-ue-E2Q" firstAttribute="centerX" secondItem="PQr-Ze-W5v" secondAttribute="centerX" id="nK3-nx-816"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Good" image="first" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="btnFlip" destination="OuT-VU-RCS" id="9Og-Ga-UAB"/>
+                        <outlet property="lbJoke" destination="mtH-1A-9rS" id="pEs-EH-XxP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="831" y="-473"/>
+            <point key="canvasLocation" x="823.125" y="-480"/>
         </scene>
         <!--Pun-->
         <scene sceneID="wg7-f3-ORb">
@@ -55,26 +68,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="87" y="312" width="201.5" height="43"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZK-iJ-GqB">
+                                <rect key="frame" x="316" y="550" width="32" height="30"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="switchViews:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Ii5-7Z-MhT"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pun" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gI3-pl-UW2">
+                                <rect key="frame" x="160" y="97" width="55" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="80" y="363" width="215" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Luke Skywalker: Yoda, are we going in the right direction?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfM-un-cMm">
+                                <rect key="frame" x="85" y="283" width="205" height="72"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="8" symbolic="YES" id="Day-4N-Vmt"/>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="JgO-Fn-dHn"/>
-                            <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
-                            <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
+                            <constraint firstItem="pfM-un-cMm" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="85" id="7ec-HY-aSb"/>
+                            <constraint firstItem="gI3-pl-UW2" firstAttribute="centerX" secondItem="O1u-W8-tvY" secondAttribute="centerX" id="E7Y-Rf-z9X"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="pfM-un-cMm" secondAttribute="trailing" constant="85" id="GGD-S5-3MY"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="eZK-iJ-GqB" secondAttribute="bottom" constant="38" id="MOC-gj-cSF"/>
+                            <constraint firstItem="gI3-pl-UW2" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="77" id="QEP-y8-d6M"/>
+                            <constraint firstItem="pfM-un-cMm" firstAttribute="centerY" secondItem="O1u-W8-tvY" secondAttribute="centerY" id="fXf-jK-DOb"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="eZK-iJ-GqB" secondAttribute="trailing" constant="27" id="rT6-cz-7SQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
@@ -91,7 +113,37 @@
                     <view key="view" contentMode="scaleToFill" id="g6R-FV-4y4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dad" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p6Q-aL-Zf7">
+                                <rect key="frame" x="158" y="97" width="59" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Luke Skywalker: Yoda, are we going in the right direction?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2g-Tc-C02">
+                                <rect key="frame" x="85" y="283" width="205" height="72"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1HF-Wa-DYT">
+                                <rect key="frame" x="316" y="550" width="32" height="30"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="switchViews:" destination="9pv-A4-QxB" eventType="touchUpInside" id="eob-eC-KMf"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hQ1-1a-491" firstAttribute="trailing" secondItem="A2g-Tc-C02" secondAttribute="trailing" constant="85" id="CB5-tH-rwm"/>
+                            <constraint firstItem="p6Q-aL-Zf7" firstAttribute="centerX" secondItem="hQ1-1a-491" secondAttribute="centerX" id="JJP-Pk-NTn"/>
+                            <constraint firstItem="hQ1-1a-491" firstAttribute="bottom" secondItem="1HF-Wa-DYT" secondAttribute="bottom" constant="38" id="TEY-nh-gDL"/>
+                            <constraint firstItem="A2g-Tc-C02" firstAttribute="centerY" secondItem="hQ1-1a-491" secondAttribute="centerY" id="VZH-fu-y6p"/>
+                            <constraint firstItem="hQ1-1a-491" firstAttribute="trailing" secondItem="1HF-Wa-DYT" secondAttribute="trailing" constant="27" id="iCS-i9-psq"/>
+                            <constraint firstItem="A2g-Tc-C02" firstAttribute="leading" secondItem="hQ1-1a-491" secondAttribute="leading" constant="85" id="ipF-ad-BZH"/>
+                            <constraint firstItem="p6Q-aL-Zf7" firstAttribute="top" secondItem="hQ1-1a-491" secondAttribute="top" constant="77" id="kSk-If-D6B"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="hQ1-1a-491"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Dad" image="first" id="SQN-DD-qO7"/>
