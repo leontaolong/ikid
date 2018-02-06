@@ -13,7 +13,8 @@ class FirstViewController: UIViewController {
     fileprivate var firstView : FirstViewController!
     @IBOutlet weak var lbJoke: UILabel!
     @IBOutlet weak var btnFlip: UIButton!
-    var head = true
+    var fliped = false
+    
     
     fileprivate func firstBuilder() {
         if firstView == nil {
@@ -27,25 +28,22 @@ class FirstViewController: UIViewController {
     @IBAction func switchViews(_ sender: Any) {
         firstBuilder()
         
+        fliped = !fliped
         UIView.beginAnimations("View Flip", context: nil)
         UIView.setAnimationDuration(0.4)
         UIView.setAnimationCurve(.easeInOut)
         
-        if (head) {
-            UIView.setAnimationTransition(.flipFromLeft, for: view, cache: true)
-            firstView.view.frame = view.frame
-            lbJoke.text = "Back"
+        UIView.setAnimationTransition(.flipFromLeft, for: view, cache: true)
+        firstView.view.frame = view.frame
+        
+        if (fliped) {
+            lbJoke.text = "would you be a vacuum cleaner?"
             btnFlip.setTitle("Back", for: UIControlState.normal)
-            UIView.commitAnimations()
-            head = false
         } else {
-            UIView.setAnimationTransition(.flipFromRight, for: view, cache: true)
-            firstView.view.frame = view.frame
-            lbJoke.text = "Front"
+            lbJoke.text = "If you were to clean a vacuum,"
             btnFlip.setTitle("Next", for: UIControlState.normal)
-            UIView.commitAnimations()
-            head = true
         }
+        UIView.commitAnimations()
     }
     
     override func viewDidLoad() {

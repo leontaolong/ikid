@@ -13,7 +13,7 @@ class ThirdViewController: UIViewController {
     fileprivate var thirdView : ThirdViewController!
     @IBOutlet weak var lbJoke: UILabel!
     @IBOutlet weak var btnFlip: UIButton!
-    var head = true
+    var fliped = false
     
     fileprivate func thirdBuilder() {
         if thirdView == nil {
@@ -27,25 +27,22 @@ class ThirdViewController: UIViewController {
     @IBAction func switchViews(_ sender: Any) {
         thirdBuilder()
         
+        fliped = !fliped
         UIView.beginAnimations("View Flip", context: nil)
         UIView.setAnimationDuration(0.4)
         UIView.setAnimationCurve(.easeInOut)
         
-        if (head) {
-            UIView.setAnimationTransition(.flipFromLeft, for: view, cache: true)
-            thirdView.view.frame = view.frame
-            lbJoke.text = "Back"
+        UIView.setAnimationTransition(.flipFromLeft, for: view, cache: true)
+        thirdView.view.frame = view.frame
+        
+        if (fliped) {
+            lbJoke.text = "No, I don’t think they’ll fit me."
             btnFlip.setTitle("Back", for: UIControlState.normal)
-            UIView.commitAnimations()
-            head = false
         } else {
-            UIView.setAnimationTransition(.flipFromRight, for: view, cache: true)
-            thirdView.view.frame = view.frame
-            lbJoke.text = "Front"
+            lbJoke.text = "Dad, can you put my shoes on?"
             btnFlip.setTitle("Next", for: UIControlState.normal)
-            UIView.commitAnimations()
-            head = true
         }
+        UIView.commitAnimations()
     }
     
     override func viewDidLoad() {

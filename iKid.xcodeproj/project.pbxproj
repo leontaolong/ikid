@@ -83,6 +83,7 @@
 			children = (
 				F6126842202839B4005AABD2 /* iKid */,
 				F6126859202839B4005AABD2 /* iKidTests */,
+				F612685A202839B4005AABD2 /* iKidTests.swift */,
 				F6126864202839B4005AABD2 /* iKidUITests */,
 				F6126841202839B4005AABD2 /* Products */,
 			);
@@ -116,7 +117,6 @@
 		F6126859202839B4005AABD2 /* iKidTests */ = {
 			isa = PBXGroup;
 			children = (
-				F612685A202839B4005AABD2 /* iKidTests.swift */,
 				F612685C202839B4005AABD2 /* Info.plist */,
 			);
 			path = iKidTests;
